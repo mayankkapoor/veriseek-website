@@ -41,15 +41,16 @@ export default function AboutPage() {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-primary">Our Vision</h2>
               <p className="text-gray-700">
-                Veriseek Education was founded with a clear vision: to bridge the gap between traditional academic
+                Veriseek Education was founded with a clear vision to bridge the gap between traditional academic
                 learning and the practical skills needed in today's professional world. We believe that education should
                 prepare students not just for exams, but for life.
               </p>
               <p className="text-gray-700">
-                Our innovative programs and competitions are designed to develop critical thinking, entrepreneurship,
-                financial literacy, and communication skills that are essential for success in any career path. By
-                providing students with real-world challenges and expert mentorship, we empower them to discover their
-                potential and pursue their passions with confidence.
+                Our innovative programmes are designed to develop critical thinking, problem-solving,
+                decision-making, startup investing skills, and communication, essential
+                competencies for success in any career path. By providing students with real-world
+                challenges and expert mentorship, we empower them to discover their potential and
+                pursue their passions with confidence.
               </p>
               <p className="text-gray-700">
                 We envision a future where every student has access to educational experiences that are engaging,
@@ -89,18 +90,23 @@ export default function AboutPage() {
                   entrepreneurship.
                 </p>
                 <div className="flex space-x-3">
-                  <Link href="#" className="text-primary hover:text-secondary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                    </svg>
-                    <span className="sr-only">LinkedIn</span>
-                  </Link>
+                  <Link 
+                  href="https://www.linkedin.com/in/rajat-kumar-004533/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-primary hover:text-secondary"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                  </svg>
+                  <span className="sr-only">LinkedIn</span>
+                </Link>
                 </div>
               </div>
             </div>
@@ -121,18 +127,23 @@ export default function AboutPage() {
                   development.
                 </p>
                 <div className="flex space-x-3">
-                  <Link href="#" className="text-primary hover:text-secondary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                    </svg>
-                    <span className="sr-only">LinkedIn</span>
-                  </Link>
+                  <Link 
+                  href="https://www.linkedin.com/in/durba-ray-ab3a6012/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-primary hover:text-secondary"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                  </svg>
+                  <span className="sr-only">LinkedIn</span>
+                </Link>
                 </div>
               </div>
             </div>
@@ -216,7 +227,7 @@ export default function AboutPage() {
                     </svg>
                   </div>
                   <span className="text-gray-700">
-                    <strong className="text-primary">Personalized Feedback:</strong> Regular assessment and guidance for
+                    <strong className="text-primary">Personalised Feedback:</strong> Regular assessment and guidance for
                     continuous improvement.
                   </span>
                 </li>
@@ -271,13 +282,7 @@ export default function AboutPage() {
               >
                 <Link href="/sharkathon">Learn About Sharkathon</Link>
               </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-white text-white hover:bg-white/20 font-bold border-2 shadow-lg transition-all hover:scale-105"
-              >
-                <Link href="/contact">Contact Us</Link>
-              </Button>
+              
             </div>
           </div>
         </div>
@@ -285,4 +290,3 @@ export default function AboutPage() {
     </>
   )
 }
-

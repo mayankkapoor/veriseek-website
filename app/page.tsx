@@ -1,13 +1,19 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, Award, Users, TrendingUp, ArrowRight } from "lucide-react"
-import TestimonialCarousel from "@/components/home/testimonial-carousel"
-import React from "react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  GraduationCap,
+  Award,
+  Users,
+  TrendingUp,
+  ArrowRight,
+} from "lucide-react";
+import TestimonialCarousel from "@/components/home/testimonial-carousel";
+import React from "react";
 
 // Import the image utility
-import { getImageUrl } from "@/lib/image-utils"
+import { getImageUrl } from "@/lib/image-utils";
 
 export default function Home() {
   return (
@@ -24,11 +30,17 @@ export default function Home() {
                 Bridging Education and Real-World Skills
               </h1>
               <p className="text-lg md:text-xl opacity-90 max-w-lg">
-                Join India's first inter school competition testing for Problem Solving, Critical Thinking, Finance,
-                Decision Making and Communication Skills
+                India’s premier learning programme for students to develop
+                critical thinking, problem-solving, decision-making, startup
+                investing and communication skills through real-world investment
+                challenges.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-8">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-8"
+                >
                   <Link href="/sharkathon">Learn About Sharkathon</Link>
                 </Button>
                 <Button
@@ -56,7 +68,9 @@ export default function Home() {
                     <Award className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-primary font-bold">Recognition & Awards</p>
+                    <p className="text-primary font-bold">
+                      Recognition & Awards
+                    </p>
                     <p className="text-sm text-gray-600">for Top Performers</p>
                   </div>
                 </div>
@@ -72,9 +86,11 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h2 className="text-3xl font-bold text-primary">Our Mission</h2>
             <p className="text-lg text-gray-700">
-              At Veriseek Education, we believe in empowering students with the skills they need to succeed in the real
-              world. Our innovative programs bridge the gap between traditional academic learning and practical
-              professional skills, preparing the next generation of leaders, entrepreneurs, and changemakers.
+              At Veriseek Education, we believe in empowering students with the
+              skills they need to succeed in the real world. Our innovative
+              programmes bridge the gap between traditional academic learning
+              and practical professional skills, preparing the next generation
+              of leaders, entrepreneurs, and changemakers.
             </p>
           </div>
         </div>
@@ -84,9 +100,12 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary">Why Choose Veriseek</h2>
+            <h2 className="text-3xl font-bold text-primary">
+              Why Choose Veriseek
+            </h2>
             <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-              Our programs offer unique advantages that prepare students for success in school and beyond
+              Our programs offer unique advantages that prepare students for
+              success in school and beyond
             </p>
           </div>
 
@@ -96,10 +115,13 @@ export default function Home() {
                 <div className="bg-primary/10 p-3 rounded-full w-fit">
                   <GraduationCap className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-primary">Real-World Skills</h3>
+                <h3 className="text-xl font-bold text-primary">
+                  Real-World Skills
+                </h3>
                 <p className="text-gray-600">
-                  Develop practical business Problem Solving, Critical Thinking, Finance, Decision Making and
-                  Communication Skills
+                  Develop critical thinking, problem-solving, decision making,
+                  startup investing skills, and communication skills applicable
+                  in businesses.
                 </p>
               </CardContent>
             </Card>
@@ -109,10 +131,12 @@ export default function Home() {
                 <div className="bg-primary/10 p-3 rounded-full w-fit">
                   <Award className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-primary">Industry Recognition</h3>
+                <h3 className="text-xl font-bold text-primary">
+                  Industry Recognition
+                </h3>
                 <p className="text-gray-600">
-                  Gain exposure to industry professionals including Venture Capital and Debt firms, as well as leading
-                  CXOs from startups
+                  Gain exposure to industry professionals including Venture
+                  Capital and Debt firms, as well as leading CXOs from startups
                 </p>
               </CardContent>
             </Card>
@@ -122,9 +146,12 @@ export default function Home() {
                 <div className="bg-primary/10 p-3 rounded-full w-fit">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-primary">Expert Mentorship</h3>
+                <h3 className="text-xl font-bold text-primary">
+                  Expert Mentorship
+                </h3>
                 <p className="text-gray-600">
-                  Learn from experienced professionals and educators who provide guidance throughout your journey.
+                  Learn from experienced professionals and educators who provide
+                  guidance throughout your journey.
                 </p>
               </CardContent>
             </Card>
@@ -134,18 +161,24 @@ export default function Home() {
                 <div className="bg-primary/10 p-3 rounded-full w-fit">
                   <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-primary">College Preparation</h3>
+                <h3 className="text-xl font-bold text-primary">
+                  College Preparation
+                </h3>
                 <p className="text-gray-600">
-                  Build a competitive portfolio that stands out in college applications and scholarship opportunities.
+                  Build a competitive portfolio that stands out in college
+                  applications and scholarship opportunities.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="border-none shadow-lg hover:shadow-xl transition-shadow bg-secondary">
               <CardContent className="p-6 space-y-4">
-                <h3 className="text-xl font-bold text-primary">Ready to Get Started?</h3>
+                <h3 className="text-xl font-bold text-primary">
+                  Ready to Get Started?
+                </h3>
                 <p className="text-primary/80">
-                  Join thousands of students who have transformed their educational journey with Veriseek.
+                  Join thousands of students who have transformed their
+                  educational journey with Veriseek.
                 </p>
                 <Button
                   asChild
@@ -198,9 +231,12 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary">Student Success Stories</h2>
+            <h2 className="text-3xl font-bold text-primary">
+              Student Success Stories
+            </h2>
             <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-              Hear from students who have participated in our programs and competitions
+              Hear from students who have participated in our programs and
+              competitions
             </p>
           </div>
 
@@ -212,10 +248,12 @@ export default function Home() {
       <section className="py-16 bg-primary text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Ready to Think Like an Investor?</h2>
+            <h2 className="text-3xl font-bold">
+              Ready to Think Like an Investor?
+            </h2>
             <p className="text-white/80">
-              Join Sharkathon today and embark on an exciting journey of critical thinking, analysis, and investment
-              evaluation.
+              Join Sharkathon today and embark on an exciting journey of
+              critical thinking, analysis, and investment evaluation.
             </p>
             <Button
               asChild
@@ -228,6 +266,5 @@ export default function Home() {
         </div>
       </section>
     </React.Fragment>
-  )
+  );
 }
-

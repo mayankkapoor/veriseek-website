@@ -1,6 +1,7 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
+import { supabase } from "@/lib/supabase"
 
 // Submit Sharkathon registration
 export async function submitRegistration(formData: FormData) {
@@ -24,16 +25,22 @@ export async function submitRegistration(formData: FormData) {
       status: "pending",
     }
 
-    // Log the data for debugging
-    console.log("Registration data:", registrationData)
+    // Insert into Supabase
+    const { error } = await supabase
+      .from('registrations')
+      .insert([registrationData])
 
-    // Add to client-side store (this will be done via client-side code)
-    // We're not actually using Supabase anymore, but we'll keep the API the same
+    if (error) {
+      console.error("Supabase error:", error)
+      return { success: false, message: "Failed to save registration. Please try again." }
+    }
+
+    // Log success
+    console.log("Registration saved to Supabase:", registrationData)
 
     // Revalidate the admin page
     revalidatePath("/admin")
 
-    // Always return success to the user
     return { success: true, message: "Registration submitted successfully!" }
   } catch (error) {
     console.error("Registration error:", error)

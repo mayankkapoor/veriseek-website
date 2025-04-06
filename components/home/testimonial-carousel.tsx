@@ -15,14 +15,14 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     quote:
-      "The entrepreneurship workshop opened my eyes to possibilities I never considered before. The mentors were supportive and the network I built has been incredibly valuable for my future plans.",
+      "I never thought like an investor.Learning how to question business models and make decisions like a Shark was eye-opening!",
     name: "Rohil",
     title: "Entrepreneurship Workshop Participant",
   },
   {
     id: 2,
     quote:
-      "Participating in Sharkathon was a game-changer for me. I learned how to think critically about business ideas and gained confidence in my analytical abilities.",
+      "The way we analysed companies and financials made me realise that business is all about logic and smart decision-making, not just theory.",
     name: "Anish",
     title: "Sharkathon Finalist",
   },
@@ -36,7 +36,7 @@ const testimonials: Testimonial[] = [
   {
     id: 4,
     quote:
-      "The mentorship I received through Veriseek helped me develop my business idea from concept to reality. I'm now running my own small business while still in high school!",
+      "I learned how to evaluate businesses, think critically, and make investment decisions, something I never thought I will do as a student!",
     name: "Yash",
     title: "Student Entrepreneur",
   },

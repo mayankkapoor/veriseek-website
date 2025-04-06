@@ -63,7 +63,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-0.5 text-secondary" />
                 <span className="text-sm text-gray-300">
-                  AIIF MPD Tower, Room MR1, 2nd Floor
+                  AIIF MPD Tower, 2nd Floor
                   <br />
                   Golf Course Road, Sector 43
                   <br />

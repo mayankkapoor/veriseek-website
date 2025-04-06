@@ -44,15 +44,6 @@ const SharkathonFAQ = () => {
         </AccordionContent>
       </AccordionItem>
 
-      <AccordionItem value="item-5">
-        <AccordionTrigger className="text-left font-medium text-primary">
-          How are the winners selected?
-        </AccordionTrigger>
-        <AccordionContent className="text-gray-600">
-          Winners are judged based on their analytical skills, strategic decision-making, and ability to evaluate
-          investment opportunities effectively.
-        </AccordionContent>
-      </AccordionItem>
 
       <AccordionItem value="item-6">
         <AccordionTrigger className="text-left font-medium text-primary">
@@ -63,15 +54,6 @@ const SharkathonFAQ = () => {
         </AccordionContent>
       </AccordionItem>
 
-      <AccordionItem value="item-7">
-        <AccordionTrigger className="text-left font-medium text-primary">
-          How much time commitment is required?
-        </AccordionTrigger>
-        <AccordionContent className="text-gray-600">
-          The competition requires approximately 20-30 hours of preparation, including study materials and practice
-          sessions.
-        </AccordionContent>
-      </AccordionItem>
     </Accordion>
   )
 }

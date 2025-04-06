@@ -68,9 +68,11 @@ const Header = () => {
               {link.name}
             </Link>
           ))}
-          <Button className="bg-secondary text-primary hover:bg-secondary/90 font-bold shadow-md border-2 border-secondary">
-            Register Now
-          </Button>
+          <Link href="/sharkathon#register" className="w-full">
+            <Button className="bg-secondary text-primary hover:bg-secondary/90 font-bold shadow-md border-2 border-secondary">
+              Register Now
+            </Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -97,7 +99,9 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-secondary text-primary hover:bg-secondary/90 w-full">Register Now</Button>
+            <Link href="/sharkathon#register" className="w-full">
+              <Button className="bg-secondary text-primary hover:bg-secondary/90 w-full">Register Now</Button>
+            </Link>
           </nav>
         </div>
       )}
