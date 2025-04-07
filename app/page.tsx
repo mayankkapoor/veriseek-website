@@ -14,12 +14,13 @@ import React from "react";
 
 // Import the image utility
 import { getImageUrl } from "@/lib/image-utils";
+import ImageCarousel from "@/components/home/carousel-home";
 
 export default function Home() {
   return (
     <React.Fragment>
       {/* Hero Section */}
-      <section className="hero-gradient text-white pt-32 pb-20">
+      <section className="bg-primary text-white pt-32 pb-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -55,13 +56,7 @@ export default function Home() {
             </div>
             <div className="relative">
               {/* Replace the hero section image with our utility */}
-              <Image
-                src={getImageUrl("hero-students") || "/placeholder.svg"}
-                alt="Students participating in Sharkathon"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-xl"
-              />
+              <ImageCarousel />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="bg-secondary p-2 rounded-full">

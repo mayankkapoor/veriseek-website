@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 // import NewsletterSignup from "@/components/shared/newsletter-signup" //Removed import
 // Import the image utility
 import { getImageUrl } from "@/lib/image-utils"
+import ImageCarousel from "@/components/home/carousel-home"
 
 export const metadata = {
   title: "About Veriseek Education | Our Mission and Vision",
@@ -255,13 +256,7 @@ export default function AboutPage() {
             </div>
             <div className="order-1 lg:order-2">
               {/* Replace the educational approach image */}
-              <Image
-                src={getImageUrl("about-approach") || "/placeholder.svg"}
-                alt="Students receiving recognition at Veriseek"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
+              <ImageCarousel/>
             </div>
           </div>
         </div>

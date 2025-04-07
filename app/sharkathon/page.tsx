@@ -28,53 +28,74 @@ export default function SharkathonPage() {
   return (
     <React.Fragment>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-primary text-white">
+      <section className="pt-20 pb-16 bg-primary text-white">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-block bg-secondary text-primary px-4 py-1 rounded-full text-sm font-medium">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <div className="inline-block bg-secondary text-primary px-3 py-1 rounded-full text-sm font-medium">
                 Now Accepting Applications
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">Sharkathon - Think like a shark</h1>
-              <p className="text-lg md:text-xl opacity-90">
-                India’s premier learning programme for students to develop critical thinking, problem-
+              
+              <h1 className="text-3xl default:text-4xl font-bold leading-tight">
+                Sharkathon - Think like a shark
+              </h1>
+              
+              <p className="text-base default:text-lg opacity-90">
+                India's premier learning programme for students to develop critical thinking, problem-
                 solving decision-making, startup investing skills and communication through real-
                 world investment challenges.
               </p>
-              <p className="text-lg md:text-xl opacity-90">
-                An immersive experience where students step into the role of sharks, analysing real
-                businesses, questioning entrepreneurs, and making strategic investment decisions.
+              
+              <p className="text-base default:text-lg opacity-90">
+                An immersive experience where students step into the role of sharks, analysing real businesses,
+                questioning entrepreneurs, and making strategic investment decisions.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-secondary text-primary hover:bg-secondary/90 font-bold shadow-lg border-2 border-secondary transition-all hover:scale-105"
-                >
-                  <Link href="#register">Register Now</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="border-secondary bg-secondary text-primary hover:bg-yellow-500 hover:text-black font-bold border-2 shadow-lg transition-all hover:scale-105 [&>a]:text-yellow-500"
-                >
-                  <Link href="#process">Learn More</Link>
-                </Button>
 
+              {/* Built by box styled exactly like the image */}
+              <div className="border border-olive-green/50 bg-light-cream p-3 rounded-sm inline-flex items-center">
+                <span className="font-medium mr-2">Built by</span>
+                <span className="font-medium mr-2">alumni from</span>
+                <div className="flex items-center space-x-3">
+                  <img src="/mit.png" alt="mit logo" className="h-16" />
+                  <img src="/wharton.png" alt="wharton logo" className="h-16" />
+                </div>
               </div>
+              
+              <div className="flex flex-wrap gap-3 pt-1 items-center">
+              <Button 
+                asChild 
+                size="default"
+                className="bg-secondary text-primary hover:bg-secondary/90 font-bold shadow-lg border-2 border-secondary transition-all hover:scale-105"
+              >
+                <Link href="#register">Register Now</Link>
+              </Button>
+              
+              <Button 
+                asChild 
+                size="default"
+                variant="outline" 
+                className="border-secondary bg-secondary text-primary hover:bg-yellow-500 hover:text-black font-bold border-2 shadow-lg transition-all hover:scale-105 [&>a]:text-yellow-500"
+              >
+                <Link href="#process">Learn More</Link>
+              </Button>
+              <div className="w-full text-white font-medium">
+              For grades 9th to 12th
             </div>
+            </div>
+
+            </div>
+
             <div className="relative">
               {/* Replace the hero section image */}
               <ImageCarousel />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="bg-secondary p-2 rounded-full">
-                    <Trophy className="h-6 w-6 text-primary" />
+              <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg">
+                <div className="flex items-center gap-2">
+                  <div className="bg-secondary p-1.5 rounded-full">
+                    <Trophy className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-primary font-bold">Recognition & Awards</p>
-                    <p className="text-sm text-gray-600">for Top Performers</p>
+                    <p className="text-primary font-bold text-sm">Recognition & Awards</p>
+                    <p className="text-xs text-gray-600">for Top Performers</p>
                   </div>
                 </div>
               </div>
@@ -90,7 +111,7 @@ export default function SharkathonPage() {
       {/* Competition Process */}
       <section className="py-16 bg-gray-50" id="process">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-2">The Sharkathon Journey</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
             <p className="text-gray-700 mt-4 text-lg max-w-2xl mx-auto">
@@ -102,7 +123,7 @@ export default function SharkathonPage() {
 
           <section className="py-16" id="overview">
           <div className="container">
-            <div  className="text-center mb-12">
+            <div  className="text-center mb-16">
               <h2 className="text-4xl font-bold text-primary mb-2">Why Join Sharkathon?</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
               <p className="text-gray-700 mt-4 text-lg max-w-2xl mx-auto">
@@ -110,7 +131,7 @@ export default function SharkathonPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
+            <div className="grid grid-cols-1 default:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
               <div className="space-y-4">
                 <div className="text-3xl font-bold text-primary">01.</div>
                 <h3 className="text-lg font-semibold text-primary">Critical Thinking & Strategic Decision-Making</h3>
@@ -145,9 +166,9 @@ export default function SharkathonPage() {
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
     <Card className="border-none shadow-lg">
       <CardContent className="p-6">
-        <h3 className="text-xl font-bold text-primary mb-4">Eligibility & Fee</h3>
+        <h3 className="text-2xl font-bold text-blue-900 mb-4">Eligibility & Fee</h3>
         <ul className="space-y-3 text-gray-600">
-          <li>• Open to individual students from Classes 9 to 12</li>
+          <li>• Open to individual students from Classes 9 to 16</li>
           <li>• Fees: INR 2,500 (inclusive of taxes)</li>
           <li>• Includes learning resources, competition access, and event-day provisions</li>
           <li>• No prior commerce knowledge required, focus on logic, problem-solving, and decision-making</li>
@@ -157,7 +178,7 @@ export default function SharkathonPage() {
 
     <Card className="border-none shadow-lg">
       <CardContent className="p-6">
-        <h3 className="text-xl font-bold text-primary mb-4">Important Dates</h3>
+        <h3 className="text-2xl font-bold text-blue-900 mb-4">Important Dates</h3>
         <ul className="space-y-3 text-gray-600">
           <li>• Registration Deadline: 20th June 2025</li>
           <li>• Access to Learning Resources: 1st July 2025</li>
@@ -170,7 +191,7 @@ export default function SharkathonPage() {
 
     <Card className="border-none shadow-lg">
       <CardContent className="p-6">
-        <h3 className="text-xl font-bold text-primary mb-4">Skills You Will Gain</h3>
+        <h3 className="text-2xl font-bold text-blue-900 mb-4">Skills You Will Gain</h3>
         <ul className="space-y-3 text-gray-600">
           <li>• Critical Thinking</li>
           <li>• Problem-Solving</li>
@@ -194,7 +215,7 @@ export default function SharkathonPage() {
       {/* Registration Form */}
       <section className="py-16 bg-gray-50" id="register">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-primary">Register for Sharkathon</h2>
             <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
               Take the first step toward an incredible investment evaluation journey
@@ -213,7 +234,7 @@ export default function SharkathonPage() {
       {/* FAQ Section */}
       <section className="py-16">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-primary">Frequently Asked Questions</h2>
             <p className="text-gray-600 mt-2 max-w-2xl mx-auto">Find answers to common questions about Sharkathon</p>
           </div>
@@ -246,4 +267,3 @@ export default function SharkathonPage() {
     </React.Fragment>
   )
 }
-
