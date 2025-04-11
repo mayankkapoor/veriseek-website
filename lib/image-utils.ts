@@ -25,10 +25,12 @@ const imageMap: Record<string, string> = {
   "about-approach":
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-14%20at%2009.31.05_4af1bbdd.jpg-ev8RWkuiymZJxd7zDh3KeZhgd6O0Xg.jpeg",
   "founder-rajat":
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-27%20at%2010.03.11_1ed3b3b9.jpg-iBXZnh5NAbb4tPvEa0D8qgvfv53DGm.jpeg",
+    "rajat-bg-bw.png",
   "founder-durba":
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-13%20at%2022.29.35_d0ebcd3e.jpg-ZybU2PKo8TM7DMz9QO4ZZ10CSClsGl.jpeg",
-  "founder-mayank":"/mayank.png",
+    "/durba.png",
+  "founder-mayank":"/mayank-bg-bw.png",
+  "founder-shalabh":"/shalabh-bg-bw.png",
+  
   // Workshop images (repurposed from Programs page)
   "workshop-coding":
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-05%20at%2020.40.16_27ff2b58.jpg-N1EHwes6kmoE1ksudDaVzSrH1SzoJT.jpeg",

@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     quote:
       "The way we analysed companies and financials made me realise that business is all about logic and smart decision-making, not just theory.",
     name: "Anish",
-    title: "Sharkathon Finalist",
+    title: "Student",
   },
   {
     id: 3,

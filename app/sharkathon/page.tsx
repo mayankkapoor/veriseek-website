@@ -37,7 +37,7 @@ export default function SharkathonPage() {
               </div>
               
               <h1 className="text-3xl default:text-4xl font-bold leading-tight">
-                Sharkathon - Think like a shark
+                Sharkathon - Learn To Think Like a Shark
               </h1>
               
               <p className="text-base default:text-lg opacity-90">
@@ -52,12 +52,16 @@ export default function SharkathonPage() {
               </p>
 
               {/* Built by box styled exactly like the image */}
-              <div className="border border-olive-green/50 bg-light-cream p-3 rounded-sm inline-flex items-center">
-                <span className="font-medium mr-2">Built by</span>
-                <span className="font-medium mr-2">alumni from</span>
-                <div className="flex items-center space-x-3">
-                  <img src="/mit.png" alt="mit logo" className="h-16" />
-                  <img src="/wharton.png" alt="wharton logo" className="h-16" />
+               <div className="border border-olive-green/50 bg-light-cream p-3 rounded-sm inline-flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3 space-y-3 sm:space-y-0 w-full max-w-screen-md">
+                <div className="text-center sm:text-left">
+                  <span className="font-medium mr-1">Built by</span>
+                  <span className="font-medium">alumni from</span>
+                </div>
+                <div className="flex flex-wrap justify-center sm:justify-start items-center gap-4">
+                  <img src="/mit.png" alt="MIT logo" className="h-12 sm:h-16" />
+                  <img src="/wharton.png" alt="Wharton logo" className="h-12 sm:h-16" />
+                  <img src="/iit.png" alt="IIT logo" className="h-12 sm:h-16" />
+                  <img src="/iima.png" alt="IIMA logo" className="h-12 sm:h-16" />
                 </div>
               </div>
               
@@ -121,6 +125,8 @@ export default function SharkathonPage() {
 
           <SharkathonTimeline />
 
+          <SharkathonComparison />  
+
           <section className="py-16" id="overview">
           <div className="container">
             <div  className="text-center mb-16">
@@ -164,10 +170,10 @@ export default function SharkathonPage() {
             </div>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-    <Card className="border-none shadow-lg">
+    <Card className="bg-primary border-none shadow-lg">
       <CardContent className="p-6">
-        <h3 className="text-2xl font-bold text-blue-900 mb-4">Eligibility & Fee</h3>
-        <ul className="space-y-3 text-gray-600">
+        <h3 className="text-2xl font-bold text-white mb-4">Eligibility & Fee</h3>
+        <ul className="space-y-3 text-white">
           <li>• Open to individual students from Classes 9 to 16</li>
           <li>• Fees: INR 2,500 (inclusive of taxes)</li>
           <li>• Includes learning resources, competition access, and event-day provisions</li>
@@ -176,10 +182,10 @@ export default function SharkathonPage() {
       </CardContent>
     </Card>
 
-    <Card className="border-none shadow-lg">
+    <Card className="bg-primary border-none shadow-lg">
       <CardContent className="p-6">
-        <h3 className="text-2xl font-bold text-blue-900 mb-4">Important Dates</h3>
-        <ul className="space-y-3 text-gray-600">
+        <h3 className="text-2xl font-bold text-white mb-4">Important Dates</h3>
+        <ul className="space-y-3 text-white">
           <li>• Registration Deadline: 20th June 2025</li>
           <li>• Access to Learning Resources: 1st July 2025</li>
           <li>• Intra-School Test (Online): 13th July 2025</li>
@@ -189,10 +195,10 @@ export default function SharkathonPage() {
       </CardContent>
     </Card>
 
-    <Card className="border-none shadow-lg">
+    <Card className="bg-primary border-none shadow-lg">
       <CardContent className="p-6">
-        <h3 className="text-2xl font-bold text-blue-900 mb-4">Skills You Will Gain</h3>
-        <ul className="space-y-3 text-gray-600">
+        <h3 className="text-2xl font-bold text-white mb-4">Skills You Will Gain</h3>
+        <ul className="space-y-3 text-white">
           <li>• Critical Thinking</li>
           <li>• Problem-Solving</li>
           <li>• Decision-Making</li>
@@ -210,7 +216,7 @@ export default function SharkathonPage() {
         </div>
       </section>
 
-      <SharkathonComparison />
+      
 
       {/* Registration Form */}
       <section className="py-16 bg-gray-50" id="register">

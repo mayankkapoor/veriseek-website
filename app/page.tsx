@@ -255,7 +255,7 @@ export default function Home() {
               size="lg"
               className="bg-secondary text-primary hover:bg-secondary/90 font-bold shadow-lg border-2 border-secondary transition-all hover:scale-105"
             >
-              <Link href="/sharkathon">Register Now</Link>
+              <Link href="/sharkathon#register">Register Now</Link>
             </Button>
           </div>
         </div>

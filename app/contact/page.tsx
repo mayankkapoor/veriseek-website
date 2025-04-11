@@ -36,7 +36,7 @@ export default function ContactPage() {
                     href="mailto:rajat@veriseekeducation.com"
                     className="text-[#011C41] hover:text-[#FAD133] hover:underline"
                   >
-                    rajat@veriseekeducation.com
+                    team@veriseekeducation.com
                   </Link>
                 </div>
               </div>

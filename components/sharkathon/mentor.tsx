@@ -6,13 +6,18 @@ const MentorsSection = () => {
   const mentors = [
     {
       name: "Mr. Rajat Kumar",
-      title: "Ex McKinsey and Wharton",
+      title: "Nandan Capital, Ex McKinsey and Wharton Alum ",
       imageKey: "founder-rajat",
     },
     {
       name: "Mr. Mayank Kapoor",
-      title: "CTO of Cardekho, MIT and IIT Alum",
+      title: "CTO Car Dekho, Alum IIT Delhi & MIT",
       imageKey: "founder-mayank",
+    },
+    {
+      name: "Mr. Shalabh Gupta",
+      title: "Founder NUUK, Alum IIT Delhi & IIM Ahmedabad",
+      imageKey: "founder-shalabh",
     },
   ];
 
@@ -28,7 +33,7 @@ const MentorsSection = () => {
         </div>
 
         {/* Grid Layout: Stacks on Mobile, 2 Columns on Larger Screens */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-20 max-w-4xl mx-auto">
           {mentors.map((mentor, index) => (
             <Card 
               key={index} 

@@ -32,7 +32,7 @@ const SimulationProcess = () => {
           <h2 className="text-4xl font-bold text-gray-900 mb-2">Simulation Process</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto"></div>
           <p className="text-gray-700 mt-4 text-lg">
-            Think like a <span className="font-bold text-blue-700">Shark</span>
+            Learn To Think like a <span className="font-bold text-blue-700">Shark</span>
           </p>
         </div>
   

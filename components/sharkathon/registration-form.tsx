@@ -1,24 +1,29 @@
+"use client";
 
-"use client"
+import type React from "react";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, Loader2 } from "lucide-react"
-import { submitRegistration } from "@/app/actions/registration"
-import { dataStore } from "@/lib/client-data-store"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle2, Loader2 } from "lucide-react";
+import { submitRegistration } from "@/app/actions/registration";
+import { dataStore } from "@/lib/client-data-store";
 
 const RegistrationForm = () => {
-  const [formSubmitted, setFormSubmitted] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formError, setFormError] = useState("")
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -31,32 +36,34 @@ const RegistrationForm = () => {
     projectIdea: "",
     howHeard: "",
     agreeTerms: false,
-  })
+  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const handleSelectChange = (name: string, value: string) => {
     setFormData({
       ...formData,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const handleCheckboxChange = (checked: boolean) => {
     setFormData({
       ...formData,
       agreeTerms: checked,
-    })
-  }
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (
       !formData.teamName ||
@@ -65,32 +72,32 @@ const RegistrationForm = () => {
       !formData.howHeard ||
       !formData.agreeTerms
     ) {
-      setFormError("Please fill in all required fields and agree to the terms")
-      return
+      setFormError("Please fill in all required fields and agree to the terms");
+      return;
     }
 
-    setIsSubmitting(true)
-    setFormError("")
+    setIsSubmitting(true);
+    setFormError("");
 
     try {
-      const form = e.target as HTMLFormElement
-      const formData = new FormData(form)
-      formData.append("program", "sharkathon")
+      const form = e.target as HTMLFormElement;
+      const formData = new FormData(form);
+      formData.append("program", "sharkathon");
 
-      const result = await submitRegistration(formData)
+      const result = await submitRegistration(formData);
 
       if (result.success) {
-        setFormSubmitted(true)
+        setFormSubmitted(true);
       } else {
-        setFormError(result.message)
+        setFormError(result.message);
       }
     } catch (error) {
-      setFormError("An unexpected error occurred. Please try again.")
-      console.error("Registration error:", error)
+      setFormError("An unexpected error occurred. Please try again.");
+      console.error("Registration error:", error);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   if (formSubmitted) {
     return (
@@ -101,14 +108,16 @@ const RegistrationForm = () => {
               <CheckCircle2 className="h-12 w-12 text-green-600" />
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-primary mb-2">Registration Successful!</h3>
+          <h3 className="text-2xl font-bold text-primary mb-2">
+            Registration Successful!
+          </h3>
           <p className="text-gray-600 mb-6">
-            Thank you for registering for Sharkathon! We've sent a confirmation email to {formData.email} with next
-            steps.
+            Thank you for registering for Sharkathon! We've sent a confirmation
+            email to {formData.email} with next steps.
           </p>
           <Button
             onClick={() => {
-              setFormSubmitted(false)
+              setFormSubmitted(false);
               setFormData({
                 firstName: "",
                 lastName: "",
@@ -121,7 +130,7 @@ const RegistrationForm = () => {
                 projectIdea: "",
                 howHeard: "",
                 agreeTerms: false,
-              })
+              });
             }}
             className="bg-primary text-white hover:bg-primary/90"
           >
@@ -129,18 +138,24 @@ const RegistrationForm = () => {
           </Button>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
     <Card className="border-none shadow-lg">
       <CardContent className="p-8">
         <form onSubmit={handleSubmit}>
-          {formError && <div className="mb-6 p-4 bg-red-50 text-red-600 rounded-md">{formError}</div>}
+          {formError && (
+            <div className="mb-6 p-4 bg-red-50 text-red-600 rounded-md">
+              {formError}
+            </div>
+          )}
 
           <div className="space-y-8">
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-primary mb-4">Personal Information</h3>
+              <h3 className="text-xl font-bold text-primary mb-4">
+                Personal Information
+              </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -195,12 +210,25 @@ const RegistrationForm = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="school">School Name *</Label>
-                  <Input id="school" name="school" value={formData.school} onChange={handleInputChange} required />
+                  <Input
+                    id="school"
+                    name="school"
+                    value={formData.school}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="grade">Grade Level *</Label>
-                  <Select name="grade" value={formData.grade} onValueChange={(value) => handleSelectChange("grade", value)} required>
+                  <Select
+                    name="grade"
+                    value={formData.grade}
+                    onValueChange={(value) =>
+                      handleSelectChange("grade", value)
+                    }
+                    required
+                  >
                     <SelectTrigger id="grade">
                       <SelectValue placeholder="Select grade" />
                     </SelectTrigger>
@@ -217,7 +245,9 @@ const RegistrationForm = () => {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-primary mb-4">Team & Project Information</h3>
+              <h3 className="text-xl font-bold text-primary mb-4">
+                Team & Project Information
+              </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -233,7 +263,14 @@ const RegistrationForm = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="teamSize">Team Size *</Label>
-                  <Select name="teamSize" value={formData.teamSize} onValueChange={(value) => handleSelectChange("teamSize", value)} required>
+                  <Select
+                    name="teamSize"
+                    value={formData.teamSize}
+                    onValueChange={(value) =>
+                      handleSelectChange("teamSize", value)
+                    }
+                    required
+                  >
                     <SelectTrigger id="teamSize">
                       <SelectValue placeholder="Select team size" />
                     </SelectTrigger>
@@ -244,12 +281,18 @@ const RegistrationForm = () => {
                       <SelectItem value="4">4 members</SelectItem>
                     </SelectContent>
                   </Select>
-                  <input type="hidden" name="teamSize" value={formData.teamSize} />
+                  <input
+                    type="hidden"
+                    name="teamSize"
+                    value={formData.teamSize}
+                  />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="projectIdea">Brief Project Idea Description *</Label>
+                <Label htmlFor="projectIdea">
+                  Brief Project Idea Description *
+                </Label>
                 <Textarea
                   id="projectIdea"
                   name="projectIdea"
@@ -262,8 +305,17 @@ const RegistrationForm = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="howHeard">How did you hear about Sharkathon? *</Label>
-                <Select name="howHeard" value={formData.howHeard} onValueChange={(value) => handleSelectChange("howHeard", value)} required>
+                <Label htmlFor="howHeard">
+                  How did you hear about Sharkathon? *
+                </Label>
+                <Select
+                  name="howHeard"
+                  value={formData.howHeard}
+                  onValueChange={(value) =>
+                    handleSelectChange("howHeard", value)
+                  }
+                  required
+                >
                   <SelectTrigger id="howHeard">
                     <SelectValue placeholder="Select an option" />
                   </SelectTrigger>
@@ -275,7 +327,11 @@ const RegistrationForm = () => {
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
-                <input type="hidden" name="howHeard" value={formData.howHeard} />
+                <input
+                  type="hidden"
+                  name="howHeard"
+                  value={formData.howHeard}
+                />
               </div>
 
               <div className="flex items-center space-x-2 mt-4">
@@ -287,11 +343,11 @@ const RegistrationForm = () => {
                 />
                 <Label htmlFor="agreeTerms" className="text-sm">
                   I agree to the{" "}
-                  <a href="#" className="text-primary underline">
-                    terms and conditions
+                  <a href="/rules" className="text-primary underline">
+                    rules and regulations
                   </a>{" "}
                   and{" "}
-                  <a href="#" className="text-primary underline">
+                  <a href="/privacy" className="text-primary underline">
                     privacy policy
                   </a>
                   .
@@ -319,7 +375,7 @@ const RegistrationForm = () => {
         </form>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default RegistrationForm
+export default RegistrationForm;

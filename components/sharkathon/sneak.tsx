@@ -16,7 +16,7 @@ const quizData = [
       "D. Rs 12.0 lakhs",
       "E. Cannot be determined from the information provided",
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
   },
   {
     question: `A famous Technology economics magazine in India, widely available across bookstores and airports across India, did two surveys. The findings were:
@@ -47,7 +47,7 @@ Which of the following, if true, would most seriously weaken the CEO's argument:
     correctAnswer: 1,
   },
   {
-    question: `During the harvest season, grain is being brought into an empty warehouse constantly every day through trucks. At the same time, it releases a certain constant quantity of grain to milling factories across the region for making flour. Unless grain is stored in the warehouse, it will get spoiled in the next rain. Rain is expected in 20 days. 400 metric tonnes of grain are waiting for storage in the warehouse. How long will it take for the warehouse to get filled? Two statements are provided:
+    question: `During the harvest season, grain is being brought into an empty warehouse constantly every day through trucks. At the same time, it releases a certain constant quantity of grain to milling factories across the region for making flour. Unless grain is stored in the warehouse, it will get spoiled in the next rain. 400 metric tonnes of grain are waiting for storage in the warehouse. How long will it take for the warehouse to get filled? Two statements are provided:
 I. The total capacity of grain the warehouse can hold is 120 metric tonnes
 II. The trucks bringing grains can completely fill the empty warehouse in 10 days if there are no outward deliveries to milling factories. The trucks carrying grain for milling can completely empty a filled warehouse in 15 days if there are no fresh inward supplies of grains.`,
     options: [
@@ -57,25 +57,21 @@ II. The trucks bringing grains can completely fill the empty warehouse in 10 day
       "4. Each statement alone is sufficient to answer the question",
       "5. Statements I and II are not sufficient to answer the question asked and additional data is needed to answer the statements",
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
   },
   {
-    question: `An entrepreneur shows the following data. He is looking for funding of INR 2 crore, at a valuation of INR 10 Crore for the
-company. Should you invest?
-Year 0: Revenue INR 1 Cr. Loss INR 2 crores
-Year 1: Revenue INR 3 Cr. Loss INR 1 Cr
-Year 2: Revenue INR 6 Cr: Profit INR 5 lakhs
-Year 3 (Current year): Revenue INR 8 Cr: Profit INR 10 lakhs
-The team is expected to come up with and ask a set of questions, get more data, and then form an opinion about the
-business, including whether the valuation is justified or not, and finally take a decision and create a small presentation on
-the reason for its decision. There is no right or wrong answer, but the depth of thinking and communication will decide
-the scoring.
-For example, the initial questions in this case could be:
-On business: Industry, promoter experience, funding taken so far
-On profitability and growth: Projections for the next 3 years
-On valuation metrics: TAM, SAM, SOM, Industry multiples, etc
-On risks and capabilities: Team, attritions if any, legal cases, consumer complaints, etc
-On financials: Metrics like debtors, inventory, ROCE, etc,`,
+    question: `An entrepreneur shows the following data. He is looking for funding of INR 2 crore, at a valuation of INR 10 Crore for the company. Should you invest?
+    Year 0: Revenue INR 1 Cr. Loss INR 2 crores
+    Year 1: Revenue INR 3 Cr. Loss INR 1 Cr
+    Year 2: Revenue INR 6 Cr: Profit INR 5 lakhs
+    Year 3 (Current year): Revenue INR 8 Cr: Profit INR 10 lakhs
+    The team is expected to come up with and ask a set of questions, get more data, and then form an opinion about the business, including whether the valuation is justified or not, and finally take a decision and create a small presentation on the reason for its decision. There is no right or wrong answer, but the depth of thinking and communication will decide the scoring.
+    For example, the initial questions in this case could be:
+    On business: Industry, promoter experience, funding taken so far
+    On profitability and growth: Projections for the next 3 years
+    On valuation metrics: TAM, SAM, SOM, Industry multiples, etc
+    On risks and capabilities: Team, attritions if any, legal cases, consumer complaints, etc
+    On financials: Metrics like debtors, inventory, ROCE, etc.`,
     options: [],
     correctAnswer: null,
   },

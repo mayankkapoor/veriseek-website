@@ -5,7 +5,7 @@ import { getImageUrl } from "@/lib/image-utils";
 import Autoplay from "embla-carousel-autoplay"
 
 const images = [
-  { src:  "/home1.JPG" ,alt: "Students evaluating business ideas at Sharkathon" },
+  { src:  "/home1.png" ,alt: "Students evaluating business ideas at Sharkathon" },
   { src: "/pic2.jpeg", alt: "Teams pitching their startup ideas" },
   { src: "/pic3.jpeg", alt: "Industry mentors guiding participants" },
 ];

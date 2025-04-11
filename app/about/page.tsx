@@ -251,7 +251,7 @@ export default function AboutPage() {
                 </li>
               </ul>
               <Button asChild className="bg-primary text-white hover:bg-primary/90 mt-4">
-                <Link href="/sharkathon">Learn About Sharkathon</Link>
+                <Link href="/sharkathon#register">Register Now</Link>
               </Button>
             </div>
             <div className="order-1 lg:order-2">
@@ -275,7 +275,7 @@ export default function AboutPage() {
                 asChild
                 className="bg-secondary text-primary hover:bg-secondary/90 font-bold shadow-lg border-2 border-secondary transition-all hover:scale-105"
               >
-                <Link href="/sharkathon">Learn About Sharkathon</Link>
+                <Link href="/sharkathon#register">Register Now</Link>
               </Button>
               
             </div>
