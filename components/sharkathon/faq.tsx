@@ -19,24 +19,16 @@ const SharkathonFAQ = () => {
           Is there a registration fee to participate?
         </AccordionTrigger>
         <AccordionContent className="text-gray-600">
-          Yes, there is a registration fee of ₹2,500 (including GST), which covers study materials and participation
+          Yes, there is a registration fee of ₹3,500 (including GST), which covers study materials and participation
           costs.
         </AccordionContent>
       </AccordionItem>
 
-      <AccordionItem value="item-3">
-        <AccordionTrigger className="text-left font-medium text-primary">
-          What is the format of the competition?
-        </AccordionTrigger>
-        <AccordionContent className="text-gray-600">
-          The competition consists of three rounds – an online critical thinking test, an online case study-based
-          analysis, and a live offline business evaluation round where students act as investors.
-        </AccordionContent>
-      </AccordionItem>
+      
 
       <AccordionItem value="item-4">
         <AccordionTrigger className="text-left font-medium text-primary">
-          What support will I receive during the competition?
+          What support will I receive during the programme?
         </AccordionTrigger>
         <AccordionContent className="text-gray-600">
           Participants will receive study materials, mentorship from industry professionals, and access to exclusive

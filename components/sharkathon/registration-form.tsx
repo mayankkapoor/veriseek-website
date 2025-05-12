@@ -5,7 +5,6 @@ import type React from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -18,7 +17,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitRegistration } from "@/app/actions/registration";
-import { dataStore } from "@/lib/client-data-store";
 
 const RegistrationForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -30,10 +28,8 @@ const RegistrationForm = () => {
     email: "",
     phone: "",
     school: "",
+    schoolCity: "",
     grade: "",
-    teamName: "",
-    teamSize: "",
-    projectIdea: "",
     howHeard: "",
     agreeTerms: false,
   });
@@ -62,13 +58,17 @@ const RegistrationForm = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent, shouldRedirectToPayment: boolean = false) => {
     e.preventDefault();
 
     if (
-      !formData.teamName ||
-      !formData.teamSize ||
-      !formData.projectIdea ||
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.school ||
+      !formData.schoolCity ||
+      !formData.grade ||
       !formData.howHeard ||
       !formData.agreeTerms
     ) {
@@ -80,14 +80,25 @@ const RegistrationForm = () => {
     setFormError("");
 
     try {
-      const form = e.target as HTMLFormElement;
-      const formData = new FormData(form);
-      formData.append("program", "sharkathon");
+      // Get the form element by searching the DOM
+      const form = document.querySelector('form') as HTMLFormElement;
+      
+      if (!form) {
+        throw new Error("Form element not found");
+      }
+      
+      const formDataToSubmit = new FormData(form);
+      formDataToSubmit.append("program", "sharkathon");
 
-      const result = await submitRegistration(formData);
+      const result = await submitRegistration(formDataToSubmit);
 
       if (result.success) {
-        setFormSubmitted(true);
+        if (shouldRedirectToPayment) {
+          // Redirect to payment page
+          window.location.href = "https://rzp.io/rzp/asKBH0Ak";
+        } else {
+          setFormSubmitted(true);
+        }
       } else {
         setFormError(result.message);
       }
@@ -112,8 +123,7 @@ const RegistrationForm = () => {
             Registration Successful!
           </h3>
           <p className="text-gray-600 mb-6">
-            Thank you for registering for Sharkathon! We've sent a confirmation
-            email to {formData.email} with next steps.
+            Thank you for registering for Sharkathon!
           </p>
           <Button
             onClick={() => {
@@ -124,17 +134,15 @@ const RegistrationForm = () => {
                 email: "",
                 phone: "",
                 school: "",
+                schoolCity: "",
                 grade: "",
-                teamName: "",
-                teamSize: "",
-                projectIdea: "",
                 howHeard: "",
                 agreeTerms: false,
               });
             }}
             className="bg-primary text-white hover:bg-primary/90"
           >
-            Register Another Team
+            Register Another Student
           </Button>
         </CardContent>
       </Card>
@@ -144,7 +152,7 @@ const RegistrationForm = () => {
   return (
     <Card className="border-none shadow-lg">
       <CardContent className="p-8">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => handleSubmit(e, false)}>
           {formError && (
             <div className="mb-6 p-4 bg-red-50 text-red-600 rounded-md">
               {formError}
@@ -220,13 +228,27 @@ const RegistrationForm = () => {
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="schoolCity">School City *</Label>
+                  <Input
+                    id="schoolCity"
+                    name="schoolCity"
+                    value={formData.schoolCity}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="grade">Grade Level *</Label>
                   <Select
                     name="grade"
                     value={formData.grade}
-                    onValueChange={(value) =>
-                      handleSelectChange("grade", value)
-                    }
+                    onValueChange={(value) => {
+                      setFormData((prev) => ({
+                        ...prev,
+                        grade: value,
+                      }));
+                    }}
                     required
                   >
                     <SelectTrigger id="grade">
@@ -241,135 +263,92 @@ const RegistrationForm = () => {
                   </Select>
                   <input type="hidden" name="grade" value={formData.grade} />
                 </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-primary mb-4">
-                Team & Project Information
-              </h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="teamName">Team Name *</Label>
-                  <Input
-                    id="teamName"
-                    name="teamName"
-                    value={formData.teamName}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="teamSize">Team Size *</Label>
+                  <Label htmlFor="howHeard">
+                    How did you hear about Sharkathon? *
+                  </Label>
                   <Select
-                    name="teamSize"
-                    value={formData.teamSize}
+                    name="howHeard"
+                    value={formData.howHeard}
                     onValueChange={(value) =>
-                      handleSelectChange("teamSize", value)
+                      handleSelectChange("howHeard", value)
                     }
                     required
                   >
-                    <SelectTrigger id="teamSize">
-                      <SelectValue placeholder="Select team size" />
+                    <SelectTrigger id="howHeard">
+                      <SelectValue placeholder="Select an option" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="1">Individual (1 person)</SelectItem>
-                      <SelectItem value="2">2 members</SelectItem>
-                      <SelectItem value="3">3 members</SelectItem>
-                      <SelectItem value="4">4 members</SelectItem>
+                      <SelectItem value="school">School</SelectItem>
+                      <SelectItem value="social">Social Media</SelectItem>
+                      <SelectItem value="friend">Friend/Family</SelectItem>
+                      <SelectItem value="search">Search Engine</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
                   <input
                     type="hidden"
-                    name="teamSize"
-                    value={formData.teamSize}
+                    name="howHeard"
+                    value={formData.howHeard}
                   />
                 </div>
               </div>
+            </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="projectIdea">
-                  Brief Project Idea Description *
-                </Label>
-                <Textarea
-                  id="projectIdea"
-                  name="projectIdea"
-                  value={formData.projectIdea}
-                  onChange={handleInputChange}
-                  placeholder="Describe your business idea in 200 words or less"
-                  className="min-h-[120px]"
-                  required
-                />
-              </div>
+            <div className="flex items-center space-x-2 mt-4">
+              <Checkbox
+                id="agreeTerms"
+                checked={formData.agreeTerms}
+                onCheckedChange={handleCheckboxChange}
+                required
+              />
+              <Label htmlFor="agreeTerms" className="text-sm">
+                I agree to the{" "}
+                <a href="/rules" className="text-primary underline">
+                  rules and regulations
+                </a>{" "}
+                and{" "}
+                <a href="/privacy" className="text-primary underline">
+                  privacy policy
+                </a>
+                .
+              </Label>
+            </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="howHeard">
-                  How did you hear about Sharkathon? *
-                </Label>
-                <Select
-                  name="howHeard"
-                  value={formData.howHeard}
-                  onValueChange={(value) =>
-                    handleSelectChange("howHeard", value)
-                  }
-                  required
-                >
-                  <SelectTrigger id="howHeard">
-                    <SelectValue placeholder="Select an option" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="school">School</SelectItem>
-                    <SelectItem value="social">Social Media</SelectItem>
-                    <SelectItem value="friend">Friend/Family</SelectItem>
-                    <SelectItem value="search">Search Engine</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-                <input
-                  type="hidden"
-                  name="howHeard"
-                  value={formData.howHeard}
-                />
-              </div>
-
-              <div className="flex items-center space-x-2 mt-4">
-                <Checkbox
-                  id="agreeTerms"
-                  checked={formData.agreeTerms}
-                  onCheckedChange={handleCheckboxChange}
-                  required
-                />
-                <Label htmlFor="agreeTerms" className="text-sm">
-                  I agree to the{" "}
-                  <a href="/rules" className="text-primary underline">
-                    rules and regulations
-                  </a>{" "}
-                  and{" "}
-                  <a href="/privacy" className="text-primary underline">
-                    privacy policy
-                  </a>
-                  .
-                </Label>
-              </div>
-
-              <div className="flex justify-end mt-6">
-                <Button
-                  type="submit"
-                  className="bg-primary text-white hover:bg-primary/90"
-                  disabled={!formData.agreeTerms || isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Submitting...
-                    </>
-                  ) : (
-                    "Submit Registration"
-                  )}
-                </Button>
-              </div>
+            <div className="flex justify-end gap-4 mt-6">
+              <Button
+                type="submit"
+                className="bg-primary text-white hover:bg-primary/90"
+                disabled={!formData.agreeTerms || isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Processing...
+                  </>
+                ) : (
+                  "Enquire More"
+                )}
+              </Button>
+              <Button
+                type="button"
+                className="bg-primary text-white hover:bg-primary/90"
+                disabled={!formData.agreeTerms || isSubmitting}
+                onClick={(e) => {
+                  // Call the same submit handler but with the payment flag set to true
+                  handleSubmit(e, true);
+                }}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Processing...
+                  </>
+                ) : (
+                  "Pay Now"
+                )}
+              </Button>
             </div>
           </div>
         </form>

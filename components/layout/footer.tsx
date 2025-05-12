@@ -63,6 +63,11 @@ const Footer = () => {
                   Rules & Regulations
                 </Link>
               </li>
+              <li>
+                <Link href="/refund" className="text-gray-300 hover:text-secondary text-sm">
+                  Refund Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -73,7 +78,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-0.5 text-secondary" />
                 <span className="text-sm text-gray-300">
-                  AIIF MPD Tower, 2nd Floor
+                  alt.f MPD Tower, 2nd Floor
                   <br />
                   Golf Course Road, Sector 43
                   <br />
@@ -97,7 +102,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} Veriseek Education. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Veriseek Education Work Pvt Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -266,19 +266,18 @@ export default function AboutPage() {
       <section className="py-16 bg-primary text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Join the Veriseek Community</h2>
+            <h2 className="text-3xl font-bold">Ready to Think Like an Investor?</h2>
             <p className="text-white/80">
-              Discover how our programs can help you develop essential skills for academic and professional success.
+              Join Sharkathon today and embark on an exciting journey of critical thinking, analysis, and investment
+              evaluation.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                asChild
-                className="bg-secondary text-primary hover:bg-secondary/90 font-bold shadow-lg border-2 border-secondary transition-all hover:scale-105"
-              >
-                <Link href="/sharkathon#register">Register Now</Link>
-              </Button>
-              
-            </div>
+            <Button
+              asChild
+              size="lg"
+              className="bg-secondary text-primary hover:bg-secondary/90 font-bold shadow-lg border-2 border-secondary transition-all hover:scale-105"
+            >
+              <Link href="#register">Register Now</Link>
+            </Button>
           </div>
         </div>
       </section>

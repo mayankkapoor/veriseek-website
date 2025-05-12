@@ -30,6 +30,9 @@ const imageMap: Record<string, string> = {
     "/durba.png",
   "founder-mayank":"/mayank-bg-bw.png",
   "founder-shalabh":"/shalabh-bg-bw.png",
+  "nandan":"/nandancapital.png",
+  "cardekho":"/cardekho.png",
+  "nuuk":"/nuuk.png",
   
   // Workshop images (repurposed from Programs page)
   "workshop-coding":

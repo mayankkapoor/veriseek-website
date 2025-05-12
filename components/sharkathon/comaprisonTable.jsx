@@ -1,170 +1,188 @@
-const SharkathonComparison = () => {
+import React from 'react';
+import { Star, DollarSign, Briefcase, BookOpen, Award, Users } from 'lucide-react';
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+
+export default function SharkathonComparison() {
+  const features = [
+    {
+      id: 1,
+      icon: <BookOpen className="text-blue-600" size={20} />,
+      name: "Skills Developed",
+      sharkathon: {
+        text: "Critical Thinking, Problem-Solving, Decision-Making, Startup Investing Skills, Communication",
+        highlight: true
+      },
+      mun: {
+        text: "Public Speaking, Diplomacy, Research",
+        highlight: false
+      },
+      olympiads: {
+        text: "Subject-Specific Theoretical Knowledge (Maths, Science, etc.)",
+        highlight: false
+      }
+    },
+    {
+      id: 2,
+      icon: <Briefcase className="text-blue-600" size={20} />,
+      name: "Real-World Application",
+      sharkathon: {
+        text: "Prepares you for being an investor, a Consultant, or a CXO",
+        highlight: true
+      },
+      mun: {
+        text: "Simulated international relations and debate on global issues",
+        highlight: false
+      },
+      olympiads: {
+        text: "Tests conceptual knowledge but lacks real-world application",
+        highlight: false
+      }
+    },
+    {
+      id: 3,
+      icon: <Users className="text-blue-600" size={20} />,
+      name: "Industry Exposure",
+      sharkathon: {
+        text: "Direct mentorship from investors, venture capitalists, and startup founders",
+        highlight: true
+      },
+      mun: {
+        text: "Prepares you for being a debater/diplomat",
+        highlight: false
+      },
+      olympiads: {
+        text: "No direct industry involvement, primarily academic evaluations",
+        highlight: false
+      }
+    },
+    {
+      id: 4,
+      icon: <BookOpen className="text-blue-600" size={20} />,
+      name: "Learning Resources",
+      sharkathon: {
+        text: "Structured learning materials, including case studies, financial models, real-world business scenarios, and mentorship resources",
+        highlight: true
+      },
+      mun: {
+        text: "Relies on self-research, delegate guides, and global issue briefs",
+        highlight: false
+      },
+      olympiads: {
+        text: "Offer subject-based problem sets that test theoretical concepts",
+        highlight: false
+      }
+    },
+    {
+      id: 5,
+      icon: <Award className="text-blue-600" size={20} />,
+      name: "Recognition & Value",
+      sharkathon: {
+        text: "Judged by industry leaders, valuable for CVs and college applications",
+        highlight: true
+      },
+      mun: {
+        text: "Recognition among debating circles",
+        highlight: false
+      },
+      olympiads: {
+        text: "Prestigious for academic excellence but limited direct industry impact",
+        highlight: false
+      }
+    },
+    {
+      id: 6,
+      icon: <DollarSign className="text-blue-600" size={20} />,
+      name: "Cost & Accessibility",
+      sharkathon: {
+        text: "Fraction of the cost of international MUNs and Olympiads, making it more accessible",
+        highlight: true
+      },
+      mun: {
+        text: "Expensive for high-level MUNs (e.g., Yale MUN)",
+        highlight: false
+      },
+      olympiads: {
+        text: "High costs for training, travel, and participation",
+        highlight: false
+      }
+    }
+  ];
+
   return (
-    <div className="p-6 bg-white text-black max-w-4xl mx-auto">
-      <h2 className="text-4xl font-bold text-primary mb-2 text-center">How Does Sharkathon Compare?</h2>
-      <div> <br/></div>
-      <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto "></div>
-      <p className="mb-6">
-        Sharkathon is not just another competition, it's a <span className="font-bold">high-impact learning experience</span> designed to equip students with <span className="font-bold">real-world business and investment skills</span>.
-      </p>
-      
-      {/* Mobile version - card-based display */}
-      <div className="md:hidden space-y-6">
-        {/* Sharkathon Card */}
-        <div className="border border-gray-300 rounded-lg overflow-hidden">
-          <div className="bg-primary text-white font-bold px-4 py-3 text-center">Sharkathon</div>
-          <div className="p-4 space-y-3">
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Skills Developed</h3>
-              <p className="text-sm">Critical Thinking, Problem-Solving, Decision-Making, Startup Investing Skills, Communication</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Real-World Application</h3>
-              <p className="text-sm">Prepares you for being an investor, a Consultant, or a CXO</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Industry Exposure</h3>
-              <p className="text-sm">Direct mentorship from <span className="font-bold">investors, venture capitalists, and startup founders</span></p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Learning Resources</h3>
-              <p className="text-sm">Structured learning materials, including <span className="font-bold">case studies, financial models, real-world business scenarios, and mentorship resources</span></p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Recognition & Value</h3>
-              <p className="text-sm">Judged by industry leaders, valuable for CVs and college applications</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Cost & Accessibility</h3>
-              <p className="text-sm">Fraction of the cost of international MUNs and Olympiads, making it more accessible</p>
-            </div>
-          </div>
+    <div className="w-full py-12 px-4 md:px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
+          How Does <img src="/logo.png" alt="Sharkathon" className="h-10 inline-block align-text-bottom" /> Compare?
+        </h1>
+
+        <p className="text-center text-lg mb-12">
+          Sharkathon is not just another competition, it's a <span className="font-semibold text-blue-700">high-impact learning experience</span> designed to equip students with <span className="font-semibold">real-world business and investment skills</span>.
+        </p>
+
+        {/* Table for medium and larger screens */}
+        <div className="hidden md:block overflow-x-auto bg-white rounded-xl shadow-lg">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                <th className="p-4  text-left w-1/4">Feature</th>
+                <th className="p-4 text-black  text-center w-1/4">Sharkathon</th>
+                <th className="p-4 text-black  text-center w-1/4">MUN</th>
+                <th className="p-4 text-black  text-center w-1/4">Olympiads</th>
+              </tr>
+            </thead>
+            <tbody>
+              {features.map((feature, index) => {
+                const rowBg = index % 2 === 0 ? "bg-white" : "bg-secondary";
+                return (
+                  <tr key={feature.id} className={rowBg}>
+                    <td className="p-4 border border-gray-200">
+                      <div className="flex items-center">
+                        {feature.icon}
+                        <span className="ml-2 font-medium">{feature.name}</span>
+                      </div>
+                    </td>
+                    <td className={`p-4 border border-gray-200 ${feature.sharkathon.highlight ? "bg-blue-100 font-semibold" : ""}`}>
+                      <div className="text-sm">{feature.sharkathon.text}</div>
+                    </td>
+                    <td className="p-4 border border-gray-200">
+                      <div className="text-sm">{feature.mun.text}</div>
+                    </td>
+                    <td className="p-4 border border-gray-200">
+                      <div className="text-sm">{feature.olympiads.text}</div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
 
-        {/* MUN Card */}
-        <div className="border border-gray-300 rounded-lg overflow-hidden">
-          <div className="bg-primary text-white font-bold px-4 py-3 text-center">MUN</div>
-          <div className="p-4 space-y-3">
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Skills Developed</h3>
-              <p className="text-sm">Public Speaking, Diplomacy, Research</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Real-World Application</h3>
-              <p className="text-sm">Simulated international relations and debate on global issues</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Industry Exposure</h3>
-              <p className="text-sm">Prepares you for being a debater/diplomat</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Learning Resources</h3>
-              <p className="text-sm">Relies on self-research, delegate guides, and global issue briefs</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Recognition & Value</h3>
-              <p className="text-sm">Recognition among debating circles</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Cost & Accessibility</h3>
-              <p className="text-sm">Expensive for high-level MUNs (e.g., Yale MUN)</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Olympiads Card */}
-        <div className="border border-gray-300 rounded-lg overflow-hidden">
-          <div className="bg-primary text-white font-bold px-4 py-3 text-center">Olympiads</div>
-          <div className="p-4 space-y-3">
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Skills Developed</h3>
-              <p className="text-sm">Subject-Specific Theoretical Knowledge (Maths, Science, etc.)</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Real-World Application</h3>
-              <p className="text-sm">Tests conceptual knowledge but lacks real-world application</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Industry Exposure</h3>
-              <p className="text-sm">No direct industry involvement, primarily academic evaluations</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Learning Resources</h3>
-              <p className="text-sm">Offer subject-based problem sets that test theoretical concepts</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Recognition & Value</h3>
-              <p className="text-sm">Prestigious for academic excellence but limited direct industry impact</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-sm text-blue-800">Cost & Accessibility</h3>
-              <p className="text-sm">High costs for training, travel, and participation</p>
-            </div>
-          </div>
+        {/* Cards for small screens */}
+        <div className="block md:hidden space-y-6">
+          {features.map((feature) => (
+            <Card key={feature.id} className="shadow-md">
+              <CardHeader className="flex flex-row items-center gap-3">
+                {feature.icon}
+                <h3 className="text-lg font-semibold">{feature.name}</h3>
+              </CardHeader>
+              <CardContent className="grid grid-cols-1 gap-4 text-sm">
+                <div className={`rounded-md p-3 ${feature.sharkathon.highlight ? 'bg-blue-100 font-medium' : 'bg-gray-50'}`}>
+                  <p className="text-blue-900 font-semibold mb-1">Sharkathon</p>
+                  <p>{feature.sharkathon.text}</p>
+                </div>
+                <div className="rounded-md p-3 bg-gray-50">
+                  <p className="text-gray-800 font-semibold mb-1">MUN</p>
+                  <p>{feature.mun.text}</p>
+                </div>
+                <div className="rounded-md p-3 bg-gray-50">
+                  <p className="text-gray-800 font-semibold mb-1">Olympiads</p>
+                  <p>{feature.olympiads.text}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
-
-      {/* Desktop version - table display */}
-      <div className="hidden md:block overflow-x-auto">
-        <table className="w-full border-collapse border border-gray-300">
-          <thead>
-            <tr>
-              <th className="border border-gray-300 px-4 py-2 bg-primary text-white">Feature</th>
-              <th className="border border-gray-300 px-4 py-2 bg-primary text-white">Sharkathon</th>
-              <th className="border border-gray-300 px-4 py-2 bg-primary text-white">MUN</th>
-              <th className="border border-gray-300 px-4 py-2 bg-primary text-white">Olympiads</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border border-gray-300 px-4 py-2 font-bold">Skills Developed</td>
-              <td className="border border-gray-300 px-4 py-2">Critical Thinking, Problem-Solving, Decision-Making, Startup Investing Skills, Communication</td>
-              <td className="border border-gray-300 px-4 py-2">Public Speaking, Diplomacy, Research</td>
-              <td className="border border-gray-300 px-4 py-2">Subject-Specific Theoretical Knowledge (Maths, Science, etc.)</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 px-4 py-2 font-bold">Real-World Application</td>
-              <td className="border border-gray-300 px-4 py-2">Prepares you for being an investor, a Consultant, or a CXO</td>
-              <td className="border border-gray-300 px-4 py-2">Simulated international relations and debate on global issues</td>
-              <td className="border border-gray-300 px-4 py-2">Tests conceptual knowledge but lacks real-world application</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 px-4 py-2 font-bold">Industry Exposure</td>
-              <td className="border border-gray-300 px-4 py-2">Direct mentorship from <span className="font-bold">investors, venture capitalists, and startup founders</span></td>
-              <td className="border border-gray-300 px-4 py-2">Prepares you for being a debater/diplomat</td>
-              <td className="border border-gray-300 px-4 py-2">No direct industry involvement, primarily academic evaluations</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 px-4 py-2 font-bold">Learning Resources</td>
-              <td className="border border-gray-300 px-4 py-2">Structured learning materials, including <span className="font-bold">case studies, financial models, real-world business scenarios, and mentorship resources</span></td>
-              <td className="border border-gray-300 px-4 py-2">Relies on self-research, delegate guides, and global issue briefs</td>
-              <td className="border border-gray-300 px-4 py-2">Offer subject-based problem sets that test theoretical concepts</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 px-4 py-2 font-bold">Recognition & Value</td>
-              <td className="border border-gray-300 px-4 py-2">Judged by industry leaders, valuable for CVs and college applications</td>
-              <td className="border border-gray-300 px-4 py-2">Recognition among debating circles</td>
-              <td className="border border-gray-300 px-4 py-2">Prestigious for academic excellence but limited direct industry impact</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 px-4 py-2 font-bold">Cost & Accessibility</td>
-              <td className="border border-gray-300 px-4 py-2">Fraction of the cost of international MUNs and Olympiads, making it more accessible</td>
-              <td className="border border-gray-300 px-4 py-2">Expensive for high-level MUNs (e.g., Yale MUN)</td>
-              <td className="border border-gray-300 px-4 py-2">High costs for training, travel, and participation</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <h2 className="mt-12 mb-6 text-2xl md:text-3xl font-extrabold text-center mx-auto max-w-4xl">
-      <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-blue-500">
-        Why settle for just debating theories when you can experience real business decision-making?
-      </span>
-      <span className="block mt-3 text-blue-700 font-bold">
-        Join Sharkathon today!
-      </span>
-    </h2>
     </div>
   );
-};
-
-export default SharkathonComparison;
+}
